@@ -167,7 +167,7 @@ td {
 /* 2列目の要素の文字色を赤に */
 .time-table.include-fare tbody td:nth-child(2),
 .time-table.include-fare thead th:nth-child(2) {
-    color: red;
+    color: #cd3c3a;
     font-weight: bold;
 }
 
@@ -227,7 +227,7 @@ td {
 }
 
 strong {
-    color: red;
+    color: #cd3c3a;
 }
 
 .external-link {
@@ -277,7 +277,7 @@ strong {
     display: block;          /* ブロックレベル要素として振る舞わせる */
     margin-bottom: 3px;      /* この疑似要素と下の <p> タグとの間の余白 */
     font-weight: bold;
-    color: #c0392b;         /* 見出しの色 (例: 落ち着いた赤系) */
+    color: #cd3c3a;         /* 見出しの色 (例: 落ち着いた赤系) */
 }
 
 .booking-info p { /* divの中のpタグに直接スタイルを適用 */
