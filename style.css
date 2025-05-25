@@ -1,0 +1,345 @@
+/* 基本的なリセットとページ全体のスタイル */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2261a8;
+    color: #fff;
+    padding: 1rem 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2261a8;
+    color: #fff;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #fff;
+}
+
+/* メインコンテンツ */
+main {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+}
+
+.live-info-frame {
+    position: relative;
+    margin: 2em auto;
+    max-width: 530px;
+    padding: 15px;
+    border: solid 3px #7fcef4;
+    border-radius: 8px;
+}
+.live-info-frame .live-info-title {
+    position: absolute;
+    display: inline-block;
+    top: -10px;
+    left: 10px;
+    padding: 0px;
+    line-height: 1;
+    font-size: 1.1rem;
+    background: #FFF;
+    color: #7fcef4;
+    font-weight: bold;
+}
+.live-info-frame p {
+    margin: 0; 
+    padding: 0;
+}
+
+/* 折りたたみ目次 */
+.toc-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.toc-summary {
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none; /* クリック時のフォーカス枠を消す（任意） */
+    display: block; /* マーカーが先頭に来るように */
+}
+
+/* 必要であれば、開いたときのsummaryのスタイル変更 */
+.toc-container[open] > .toc-summary {
+    border-bottom: 1px solid #ddd; /* 開いたときに下に線を引くなど */
+}
+
+.table-of-contents {
+    padding: 0px 15px 15px 35px; /* summaryのテキストと合わせるため左に少しパディング */
+}
+
+.table-of-contents ul {
+    list-style: disc; /* 通常のリストマーカーに戻すか、noneのままにするかはお好みで */
+    padding-left: 20px; /* リストのインデント */
+    margin: 0;
+}
+
+.table-of-contents ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 5px 0;
+}
+
+.table-of-contents ul li a:hover {
+    text-decoration: underline;
+}
+
+/* セクション、見出し、画像、表などのスタイル (変更なし、または微調整) */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    font-size: 1.6rem;
+    margin-top: 30px; /* 目次のすぐ下にセクションが来ても良いように */
+}
+#section1 h2 { /* 最初のセクションの見出しだけは目次のすぐ下なのでマージンを調整 */
+    margin-top: 0;
+}
+
+
+h3 {
+    color: #555;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    display: block;
+    overflow-x: auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    text-align: right;
+}
+
+/* 表1：時刻表 */
+/* 行見出しと列見出し */
+.time-table thead th,
+.time-table tbody th[scope="row"] {
+    background-color: #e0f2f7; /* 薄い青 */
+}
+
+/* 2列目の要素の文字色を赤に */
+.time-table.include-fare tbody td:nth-child(2),
+.time-table.include-fare thead th:nth-child(2) {
+    color: red;
+    font-weight: bold;
+}
+
+.no-bold {
+  font-weight: normal;
+}
+
+/* 表2：距離 */
+/* 行見出しと列見出し */
+.distance-table thead th,
+.distance-table tbody th[scope="row"] {
+    background-color: #e8f5e9; /* 薄い緑 */
+}
+
+/* 表3：終電 */
+/* 行見出しと列見出し */
+.last-train-table thead th,
+.last-train-table tbody th[scope="row"] {
+    background-color: #ffebee; /* 薄い赤 */
+}
+
+/* 表4：所要時間 */
+/* 行見出しと列見出し */
+.duration-table thead th,
+.duration-table tbody th[scope="row"] {
+    background-color: #ffefd5; /* 薄いオレンジ */
+}
+
+/* コールアウト - メモ */
+.callout {
+    background-color: #fffbd8; /* 薄い黄色 */
+    border: 1px solid #eee8aa;
+    padding: 10px 20px;
+    margin: 25px 0;
+    border-radius: 4px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+    position: relative;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* メモのタイトルを疑似要素で追加 */
+.callout::before {
+    content: "MEMO";
+    display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #808000;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.callout p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+strong {
+    color: red;
+}
+
+.external-link {
+    color: #007bff; /* リンクの基本色 */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.external-link::after {
+    content: ""; /* 必須 */
+    display: inline-block; /* 幅、高さ、vertical-align を有効にするため */
+
+    width: 1em;
+    height: 1em;
+
+    background-image: url("images/external_link_icon.svg"); /* ★アイコン画像のパスを正しく指定してください */
+    background-size: contain;    /* アイコンが指定した幅/高さに収まるように調整 */
+    background-repeat: no-repeat; /* アイコンの繰り返しを禁止 */
+    background-position: center; /* アイコンを中央に配置 */
+
+    margin-left: 0.1em;     /* テキストとアイコンの間のスペース */
+
+    /* 垂直位置の調整: テキストの上部あたりに配置する */
+    vertical-align: baseline;
+}
+
+.external-link:hover,
+.external-link:focus {
+    color: #0056b3; /* ホバー/フォーカス時のリンク色 */
+    text-decoration: underline;
+}
+
+
+.booking-info {
+    background-color: #fef9e7; /* 薄いクリーム色/黄色系の背景 */
+    border: 1px solid #f8c471;  /* 少し濃いめの黄色系の境界線 */
+    border-left: 4px solid #f39c12; /* 左側の境界線をアクセントカラーで太く */
+    padding: 12px 18px;          /* 内側の余白 */
+    border-radius: 4px;           /* 角を少し丸くする */
+    margin: 10px 0;               /* 上下のマージン */
+    font-family: "Helvetica Neue", Arial, sans-serif; /* フォントファミリーの例 */
+    position: relative; /* 疑似要素の配置の基点になることがある (今回は必須ではないが念のため) */
+}
+
+.booking-info::before {
+    content: "予約開始日時"; /* 表示させたい固定テキスト */
+    display: block;          /* ブロックレベル要素として振る舞わせる */
+    margin-bottom: 3px;      /* この疑似要素と下の <p> タグとの間の余白 */
+    font-weight: bold;
+    color: #c0392b;         /* 見出しの色 (例: 落ち着いた赤系) */
+}
+
+.booking-info p { /* divの中のpタグに直接スタイルを適用 */
+    margin: 0;                /* pタグのデフォルトマージンをリセット */
+    font-size: 1em;           /* 日時情報のフォントサイズ */
+    color: #34495e;         /* 日時情報の色 (例: 濃いグレー) */
+    line-height: 1.5;         /* 行の高さを確保 */
+}
+
+/* スマートフォン向けスタイル */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .event-info-frame {
+        max-width: none;      /* PC用の最大幅制限を解除 */
+        width: 90%;           /* 画面幅に対して90%の幅にする */
+        margin-top: 20px;     /* 上マージンを少し調整 */
+        margin-bottom: 20px;  /* 下マージンを少し調整 */
+        padding: 20px 15px;   /* 内側パディングを調整 (左右を少し狭く) */
+        outline-offset: -6px; /* 二重線の隙間を少し調整 (外3px + 隙間2px = 計6px) (任意) */
+    }
+
+    .event-frame-title {
+        font-size: 1.5em;     /* タイトルのフォントサイズを少し小さく */
+        padding-bottom: 12px; /* タイトルと詳細の間のスペースを調整 */
+    }
+
+    .event-frame-details {
+        font-size: 1em;       /* 詳細テキストのフォントサイズを少し小さく */
+        line-height: 1.5;     /* 行間を少し調整 */
+    }
+
+    .event-frame-date {
+        margin-bottom: 6px;  /* 日程と会場の間のスペースを少し調整 */
+    }
+
+    .toc-summary {
+        padding: 8px 15px;
+    }
+    .table-of-contents {
+        padding: 0px 10px 10px 25px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    table {
+        -webkit-overflow-scrolling: touch;
+    }
+}
