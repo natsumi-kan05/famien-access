@@ -25,7 +25,6 @@ footer {
     padding: 20px;
     background-color: #2261a8;
     color: #fff;
-    margin-top: 30px;
 }
 
 footer a {
@@ -109,7 +108,7 @@ main {
 
 /* セクション、見出し、画像、表などのスタイル (変更なし、または微調整) */
 section {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 h2 {
@@ -259,7 +258,6 @@ strong {
     color: #0056b3; /* ホバー/フォーカス時のリンク色 */
     text-decoration: underline;
 }
-
 
 .booking-info {
     background-color: #fef9e7; /* 薄いクリーム色/黄色系の背景 */
