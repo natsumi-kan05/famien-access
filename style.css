@@ -86,7 +86,7 @@ main {
 }
 
 .table-of-contents {
-    padding: 0px 15px 15px 35px; /* summaryのテキストと合わせるため左に少しパディング */
+    padding: 15px 15px 15px 35px; /* summaryのテキストと合わせるため左に少しパディング */
 }
 
 .table-of-contents ul {
@@ -330,7 +330,7 @@ p.back-to-access {
         padding: 8px 15px;
     }
     .table-of-contents {
-        padding: 0px 10px 10px 25px;
+        padding: 10px 10px 10px 25px;
     }
 
     h2 {
